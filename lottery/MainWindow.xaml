@@ -1,0 +1,71 @@
+﻿<Window x:Class="lottery.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lottery"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        WindowState="Maximized"
+         AllowsTransparency="True"
+        Title="MainWindow" Height="768" Width="1024">
+    <Grid x:Name="Background" Background="#FFFF5353">
+        <Label x:Name="Award" Content="欢迎来到大抽奖环节" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Foreground="#FFFDFDA8" FontSize="72"/>
+
+        <Grid HorizontalAlignment="Left" Height="390" Margin="10,10,0,10" VerticalAlignment="Center" Width="231">
+            <Button x:Name="ThirdAward" Content="三等奖" HorizontalAlignment="Center" Margin="30,30,30,0" Width="170" BorderBrush="#FF88B032" Background="#FFF09819" Foreground="#FFFDFDA8" FontSize="36" Click="ThirdAward_Click" Height="60" VerticalAlignment="Top" MouseEnter="ThirdAward_MouseEnter">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+                <Button.BitmapEffect>
+                    <DropShadowBitmapEffect Color="Black" Direction="320" Softness="0.3" ShadowDepth="2" Opacity="0.5" />
+                </Button.BitmapEffect>
+            </Button>
+            <Button x:Name="SecondAward" Content="二等奖" HorizontalAlignment="Center" Margin="30,120,31,0" VerticalAlignment="Top" Width="170" BorderBrush="#FF88B032" Background="#FFF09819" Height="60" Foreground="#FFFDFDA8" FontSize="36" Click="SecondAward_Click" MouseEnter="SecondAward_MouseEnter">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+                <Button.BitmapEffect>
+                    <DropShadowBitmapEffect Color="Black" Direction="320" Softness="0.3" ShadowDepth="2" Opacity="0.5" />
+                </Button.BitmapEffect>
+            </Button>
+            <Button x:Name="FirstAward" Content="一等奖" HorizontalAlignment="Center" Margin="30,210,30,0" VerticalAlignment="Top" Width="170" BorderBrush="#FF88B032" Background="#FFF09819" Height="60" Foreground="#FFFDFDA8" FontSize="36" Click="FirstAward_Click" MouseEnter="FirstAward_MouseEnter">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+                <Button.BitmapEffect>
+                    <DropShadowBitmapEffect Color="Black" Direction="320" Softness="0.3" ShadowDepth="2" Opacity="0.5" />
+                </Button.BitmapEffect>
+            </Button>
+            <Button x:Name="SpecialAward" Content="特等奖" HorizontalAlignment="Center" Margin="30,300,30,0" VerticalAlignment="Top" Width="170" BorderBrush="#FF88B032" Background="#FFF09819" Height="60" Foreground="#FFFDFDA8" FontSize="36" Click="SpecialAward_Click" MouseEnter="SpecialAward_MouseEnter">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+                <Button.BitmapEffect>
+                    <DropShadowBitmapEffect Color="Black" Direction="320" Softness="0.3" ShadowDepth="2" Opacity="0.5" />
+                </Button.BitmapEffect>
+            </Button>
+        </Grid>
+        <Button x:Name="ExitButton" Content="退出" HorizontalAlignment="Right" Margin="0,0,18,18" VerticalAlignment="Bottom" Width="171" BorderBrush="#FF88B032" Background="#FFF09819" Height="61" Foreground="#FFFDFDA8" FontSize="36" Click="ExitButton_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+            <Button.BitmapEffect>
+                <DropShadowBitmapEffect Color="Black" Direction="320" Softness="0.3" ShadowDepth="2" Opacity="0.5" />
+            </Button.BitmapEffect>
+        </Button>
+        <TextBlock x:Name="Winner" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Foreground="#FFFDFDA8" FontSize="72" FontFamily="Consolas"/>
+        <Label x:Name="settings" Content="设置" HorizontalAlignment="Left" Margin="10,0,0,10" Foreground="#FFC95454" PreviewMouseUp="Settings_PreviewMouseUp" Height="25" VerticalAlignment="Bottom"/>
+
+    </Grid>
+</Window>
