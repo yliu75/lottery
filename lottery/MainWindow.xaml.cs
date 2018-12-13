@@ -52,8 +52,13 @@ namespace lottery {
             } while (Ranhistory.Contains(ran));
             Ranhistory.Add(ran);
             string s = (ran).ToString();
+            if (TotalNum > 999) {
 
-            return string.Format("{0,4}", s);
+                return string.Format("{0,4}", s);
+            } else {
+                return string.Format("{0,3}", s);
+
+            }
         }
 
 
@@ -129,7 +134,7 @@ namespace lottery {
                     for (int i = 0; i < WinnerNum / 3 - 1; i++) {
                         Winner.Text += "\n" + RandomNum(i) + " " + RandomNum(i * 100) + " " + RandomNum(i * 1000);
                     }
-                    Winner.Text += "\n" + RandomNum(102)+ " "+RandomNum(1);
+                    Winner.Text += "\n" + RandomNum(102) + " " + RandomNum(1);
                     break;
 
             }
@@ -182,7 +187,12 @@ namespace lottery {
         private void SpecialAward_Click(object sender, RoutedEventArgs e) {
             if (StartDrawing.IsEnabled) {
                 StartDrawing.Stop();
-                Winner.Text = string.Format("{0,4}", new Random().Next(1, SpecialRange).ToString());
+                if (TotalNum > 999) {
+
+                    Winner.Text = string.Format("{0,4}", new Random().Next(1, SpecialRange).ToString());
+                } else {
+                    Winner.Text = string.Format("{0,3}", new Random().Next(1, SpecialRange).ToString());
+                }
                 SpecialAward.Content = "特等奖";
 
             } else {
